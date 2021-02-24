@@ -48,5 +48,15 @@ function onNextClick() {
     document.querySelector(".div-lastname").innerHTML = lastName;
 }
 
+function callValidation(){
+
+      if(grecaptcha.getResponse().length == 0){
+            alert('Please click the reCAPTCHA checkbox');
+            return false;
+        } else {
+            return true;
+        }
+}
+
 
 
