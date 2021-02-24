@@ -135,7 +135,7 @@
                 <div class="g-recaptcha" data-sitekey="6Lds32QaAAAAANnkvCoXZ9IV-aOfiX2S6HTO2UKc" data-callback="recaptcha_callback"></div><br>     
                 <div class="form-group">
                     <button type="button" class="previous-btn">Prev</button>
-                    <button type="submit" class="submit-btn" name="submit" disabled="true">Submit</button>
+                    <button id="sub-button" type="submit" class="submit-btn" name="submit" disabled="true">Submit</button>
                 </div>
             </div>
 
@@ -168,9 +168,10 @@ document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
 setInterval(timestamp, 500);
 </script>
 <script type="text/javascript">
+var subbut = document.getElementById("sub-button");
 function recaptcha_callback(){
 alert("callback working");
-$('.button').prop("disabled", false);
+$(subbut).prop("disabled", false);
 }
 </script>
 
