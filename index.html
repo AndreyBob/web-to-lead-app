@@ -137,7 +137,7 @@
                 <div class="g-recaptcha" data-sitekey="6Lds32QaAAAAANnkvCoXZ9IV-aOfiX2S6HTO2UKc"></div><br>     
                 <div class="form-group">
                     <button type="button" class="previous-btn">Prev</button>
-                    <button type="submit" class="submit-btn" name="submit">Submit</button>
+                    <button type="submit" class="submit-btn" name="submit" onclick="return callValidation();">Submit</button>
                 </div>
             </div>
 
@@ -152,6 +152,17 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
+</script>
+    <script type="text/javascript">
+    function callValidation(){
+
+        if(grecaptcha.getResponse().length == 0){
+            alert('Please click the reCAPTCHA checkbox');
+            return false;
+        } else {
+        return true;
+        }
+    }
 </script>
 <script>
     $( function() {
