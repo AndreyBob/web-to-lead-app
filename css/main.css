@@ -114,6 +114,7 @@ h2.title-form {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-left: 5%;
 }
 
 .div-right {
